@@ -1,0 +1,23 @@
+# Elestio CI/CD config for TEYIA landing (Vite + React)
+# https://docs.elest.io/books/cicd-pipelines/page/create-your-own-template-elestioyml
+
+config:
+  runTime: 'NodeJs'
+  version: '20'
+  framework: 'React'
+  buildCommand: 'npm run build'
+  buildDir: 'dist'
+  runCommand: 'npm run start'
+  installCommand: 'npm install'
+ports:
+  - protocol: 'HTTPS'
+    targetProtocol: 'HTTP'
+    listeningPort: '443'
+    targetPort: '3000'
+    targetIP: '172.17.0.1'
+    public: true
+    path: '/'
+    isAuth: false
+webUI:
+  - url: 'https://[CI_CD_DOMAIN]'
+    label: 'Website'

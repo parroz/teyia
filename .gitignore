@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+
+# Dependencies and build (teyia-web)
+teyia-web/node_modules
+teyia-web/dist
+
+# Env and local
+.env
+.env.local
+*.local

@@ -1,0 +1,81 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* TEYIA palette (RGB) */
+  --teyia-navy: rgb(40, 39, 106);
+  --teyia-coral: rgb(195, 74, 72);
+  --teyia-sage: rgb(100, 149, 117);
+  --teyia-cream: rgb(221, 214, 198);
+
+  --bg: #0a0a0a;
+  --bg-elevated: rgba(40, 39, 106, 0.25);
+  --surface: rgba(40, 39, 106, 0.35);
+  --text: rgb(221, 214, 198);
+  --text-muted: rgba(221, 214, 198, 0.75);
+  --accent: rgb(195, 74, 72);
+  --accent-dim: rgba(195, 74, 72, 0.85);
+  --accent-sage: rgb(100, 149, 117);
+  --border: rgba(221, 214, 198, 0.12);
+
+  /* Card backgrounds (slightly different darks) */
+  --card-bg-1: rgba(30, 29, 55, 0.95);
+  --card-bg-2: rgba(25, 28, 35, 0.95);
+  --card-bg-3: rgba(28, 30, 48, 0.95);
+  --card-bg-4: rgba(22, 25, 32, 0.95);
+  --card-bg-5: rgba(28, 27, 45, 0.95);
+  --card-bg-6: rgba(26, 28, 38, 0.95);
+  --card-bg-7: rgba(24, 26, 36, 0.95);
+
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fixed background – stays put while cards scroll */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: -1;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-dim);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
