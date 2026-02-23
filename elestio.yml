@@ -1,0 +1,26 @@
+# Repo-root config: app is in teyia-web/, use our Dockerfile via lifecycle
+# https://docs.elest.io/books/cicd-pipelines/page/create-your-own-template-elestioyml
+
+config:
+  runTime: 'docker'
+  version: ''
+  framework: ''
+  installCommand: ''
+  buildCommand: 'docker build -t teyia-app .'
+  buildDir: '/'
+  runCommand: 'docker run -d -p 3000:3000 --name teyia-app teyia-app'
+lifeCycleConfig:
+  preInstallCommand: './scripts/prepare-dockerfile.sh'
+  preUpdateCommand: './scripts/prepare-dockerfile.sh'
+ports:
+  - protocol: 'HTTPS'
+    targetProtocol: 'HTTP'
+    listeningPort: '443'
+    targetPort: '3000'
+    targetIP: '172.17.0.1'
+    public: true
+    path: '/'
+    isAuth: false
+webUI:
+  - url: 'https://[CI_CD_DOMAIN]'
+    label: 'Website'
