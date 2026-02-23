@@ -53,7 +53,7 @@ If you chose “new VM”:
 
 ## Step 6: Configure the project
 
-**Important:** The app lives in **`teyia-web/`**. The repo has a root **`elestio.yml`** and **`Dockerfile.teyia`** (renamed so it does not conflict with Elestio’s generated file on pull). Use **`docker-compose.teyia.yml`** (references `Dockerfile.teyia`). Leave **Root directory** empty. If the build still fails, in the pipeline set **Build command** to: `docker-compose -f docker-compose.teyia.yml build` and **Run command** to: `docker-compose -f docker-compose.teyia.yml up -d`.
+**Important:** The app is at the **repo root** (package.json, src/, public/) (renamed so it does not conflict with Elestio’s generated file on pull). Leave **Root directory** empty. Root **elestio.yml** uses Node.js: build `npm run build`, run `npm run start`, port 3000.
 
 If you have **`elestio.yml`** in the repo (we added it), Elestio will pre-fill most fields. Check that they match:
 
@@ -61,7 +61,7 @@ If you have **`elestio.yml`** in the repo (we added it), Elestio will pre-fill m
 |------------------|--------------------|
 | **Project name** | e.g. `teyia-web`   |
 | **Branch**       | `main` (or your default) |
-| **Root directory** | Leave empty if the repo root is the app; otherwise e.g. `teyia-web` |
+| **Root directory** | Leave empty (app is at repo root) |
 | **Runtime**      | Node.js            |
 | **Version**      | 20                 |
 | **Framework**    | React              |
@@ -86,11 +86,11 @@ No need to add env vars unless your app uses them.
 - Each push to the selected branch will trigger a new build and deploy.
 - Logs and redeploys are available from the same pipeline page in Elestio.
 
-## If the app is in a subfolder
+## Repo structure
 
-If the repo contains more than this app (e.g. `teyia-web` at the root and other folders):
+The app is at repo root; other assets (logos, pitch) (e.g. `teyia-web` at the root and other folders):
 
-1. In “Configure your project”, set **Root directory** to `teyia-web` (or the folder that contains `package.json` and `elestio.yml`).
+1. In “Configure your project”, (not used; app is at root) (or the folder that contains `package.json` and `elestio.yml`).
 2. The install/build/start commands and `dist` path are relative to that folder, so they stay as above.
 
 ## Links

@@ -1,14 +1,14 @@
-# Repo-root config: app is in teyia-web/, docker-compose.yml uses Dockerfile.teyia
+# Elestio CI/CD config for TEYIA landing (Vite + React)
 # https://docs.elest.io/books/cicd-pipelines/page/create-your-own-template-elestioyml
 
 config:
-  runTime: 'dockerCompose'
-  version: ''
-  framework: ''
-  installCommand: ''
-  buildCommand: 'docker-compose -f docker-compose.teyia.yml build'
-  buildDir: '/'
-  runCommand: 'docker-compose -f docker-compose.teyia.yml up -d'
+  runTime: 'NodeJs'
+  version: '20'
+  framework: 'React'
+  buildCommand: 'npm run build'
+  buildDir: 'dist'
+  runCommand: 'npm run start'
+  installCommand: 'npm install'
 ports:
   - protocol: 'HTTPS'
     targetProtocol: 'HTTP'

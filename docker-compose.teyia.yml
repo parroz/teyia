@@ -1,9 +1,0 @@
-# Use our Dockerfile (teyia-web lives in subfolder)
-services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile.teyia
-    ports:
-      - "3000:3000"
-    restart: unless-stopped
