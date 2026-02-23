@@ -1,17 +1,14 @@
-# Repo-root config: app is in teyia-web/, use our Dockerfile via lifecycle
+# Repo-root config: app is in teyia-web/, docker-compose.yml uses Dockerfile.teyia
 # https://docs.elest.io/books/cicd-pipelines/page/create-your-own-template-elestioyml
 
 config:
-  runTime: 'docker'
+  runTime: 'dockerCompose'
   version: ''
   framework: ''
   installCommand: ''
-  buildCommand: 'docker build -t teyia-app .'
+  buildCommand: 'docker-compose -f docker-compose.teyia.yml build'
   buildDir: '/'
-  runCommand: 'docker run -d -p 3000:3000 --name teyia-app teyia-app'
-lifeCycleConfig:
-  preInstallCommand: './scripts/prepare-dockerfile.sh'
-  preUpdateCommand: './scripts/prepare-dockerfile.sh'
+  runCommand: 'docker-compose -f docker-compose.teyia.yml up -d'
 ports:
   - protocol: 'HTTPS'
     targetProtocol: 'HTTP'

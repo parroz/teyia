@@ -53,7 +53,7 @@ If you chose “new VM”:
 
 ## Step 6: Configure the project
 
-**Important:** The app lives in **`teyia-web/`**. The repo has a root **`elestio.yml`** and **`Dockerfile.teyia`** (renamed so it does not conflict with Elestio’s generated file on pull). A **pre-install / pre-update** script copies `Dockerfile.teyia` to `Dockerfile` before the Docker build. In Elestio, leave **Root directory** **empty** so the build runs from the repo root and uses the root `elestio.yml` and Docker setup.
+**Important:** The app lives in **`teyia-web/`**. The repo has a root **`elestio.yml`** and **`Dockerfile.teyia`** (renamed so it does not conflict with Elestio’s generated file on pull). Use **`docker-compose.teyia.yml`** (references `Dockerfile.teyia`). Leave **Root directory** empty. If the build still fails, in the pipeline set **Build command** to: `docker-compose -f docker-compose.teyia.yml build` and **Run command** to: `docker-compose -f docker-compose.teyia.yml up -d`.
 
 If you have **`elestio.yml`** in the repo (we added it), Elestio will pre-fill most fields. Check that they match:
 
