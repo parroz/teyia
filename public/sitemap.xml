@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://teyia.net/who-we-are</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://teyia.net/client-login</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -2,6 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import ClientLogin from './pages/ClientLogin'
+import WhoWeAre from './pages/WhoWeAre'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/client-login" element={<ClientLogin />} />
+        <Route path="/who-we-are" element={<WhoWeAre />} />
       </Routes>
     </div>
   )

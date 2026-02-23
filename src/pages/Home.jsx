@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Home() {
   return (
     <>
@@ -20,7 +22,7 @@ function Home() {
               <span className="hero-line hero-line-2">Understand it.</span>
               <span className="hero-line hero-line-3">Improve the outcome.</span>
             </h1>
-            <a href="mailto:ask@teyia.net" className="button button-primary">Get in touch</a>
+            <a href="mailto:ask@teyia.net" className="button button-primary" target="_blank" rel="noopener noreferrer">Get in touch</a>
           </div>
         </section>
 
@@ -99,9 +101,9 @@ function Home() {
       <footer className="site-footer">
         <div className="container">
           <nav className="footer-nav">
-            <a href="#">Who we are?</a>
+            <Link to="/who-we-are">Who we are?</Link>
             <a href="#">Careers</a>
-            <a href="mailto:joao@teyia.net">Contact</a>
+            <a href="mailto:ask@teyia.net" target="_blank" rel="noopener noreferrer">Contact</a>
           </nav>
           <p className="footer-copy">© TEYIA. All rights reserved.</p>
         </div>

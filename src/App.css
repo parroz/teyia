@@ -495,6 +495,77 @@ main {
   margin: 1.25rem 0 0;
 }
 
+/* Who we are page */
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.who-page {
+  flex: 1;
+  padding: 6rem 0 4rem;
+}
+
+.who-title {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.who-tagline {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin: 0 0 3rem;
+  font-style: italic;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-card {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.team-name {
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+}
+
+.team-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-sage);
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.team-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.who-page .button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 /* Site footer – Who we are, Careers, Contact (not a card) */
 .site-footer {
   padding: 2rem 0;
