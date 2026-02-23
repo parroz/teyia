@@ -1,0 +1,24 @@
+# TEYIA landing — app lives in teyia-web/
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy app (teyia-web) only
+COPY teyia-web/package.json teyia-web/package-lock.json ./
+RUN npm ci
+
+COPY teyia-web/ ./
+RUN npm run build
+
+# Production: serve static build
+FROM node:20-alpine
+
+WORKDIR /app
+
+RUN npm install -g serve@14
+
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+
+CMD ["serve", "dist", "-s", "-l", "3000"]

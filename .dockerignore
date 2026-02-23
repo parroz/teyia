@@ -1,0 +1,11 @@
+# Ignore everything except teyia-web for the build
+*
+!teyia-web
+
+# Within teyia-web, ignore dev artifacts
+teyia-web/node_modules
+teyia-web/dist
+teyia-web/.git
+teyia-web/*.log
+teyia-web/.env*
+teyia-web/.DS_Store

@@ -53,6 +53,10 @@ If you chose “new VM”:
 
 ## Step 6: Configure the project
 
+**Important:** The repo has a **Dockerfile at the repo root** (next to `teyia-web/`) so the Docker build finds `package.json` inside `teyia-web/`. In Elestio, if there is an option like **"Use repository Dockerfile"** or **"Dockerfile path"**, use the root Dockerfile (leave path empty or set to `Dockerfile`). Leave **Root directory** empty when using this Dockerfile so the build runs from the repo root.
+
+If you are not using Docker and instead use script-based build, set **Root directory** to `teyia-web`.
+
 If you have **`elestio.yml`** in the repo (we added it), Elestio will pre-fill most fields. Check that they match:
 
 | Field            | Value              |

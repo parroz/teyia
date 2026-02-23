@@ -1,0 +1,5 @@
+# https://teyia.net
+User-agent: *
+Allow: /
+
+Sitemap: https://teyia.net/sitemap.xml
